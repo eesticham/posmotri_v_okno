@@ -27,16 +27,6 @@ ol {
   list-style: none;
 }
 
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-}
-
 .page {
   inline-size: 1200px;
   block-size: 100%;
@@ -52,8 +42,8 @@ ol {
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
-  margin: 133px 40px;
 }
 
 .result {
@@ -151,7 +141,7 @@ ol {
   background-color: transparent;
 }
 
-input[type='checkbox']:checked + .search-form__pseudo-checkbox {
+input[type='checkbox']:checked+.search-form__pseudo-checkbox {
   background-color: #fff;
   width: 15px;
   height: 15px;
@@ -219,10 +209,6 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox {
   height: 300px;
   overflow-y: scroll;
   position: relative;
-}
-
-.preloader {
-  position: absolute;
 }
 
 .content__list-item {
