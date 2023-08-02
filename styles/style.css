@@ -38,6 +38,10 @@ ol {
 }
 
 .page {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -45,20 +49,15 @@ ol {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  overflow: hidden;
 }
 
 .content {
-  height: 100vh;
+  max-width: 1140px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 30px;
-}
 
-.result {
-  margin-top: 76px;
-  margin-bottom: 5px;
 }
 
 .result__video-container {
@@ -87,7 +86,6 @@ ol {
 
 .search-form__fieldset-title {
   color: #FFF;
-  font-family: Fira Sans Condensed;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -96,8 +94,9 @@ ol {
 }
 
 .search-form__label {
-  width: fit-content;
-  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .search-form__label:hover {
@@ -108,7 +107,7 @@ ol {
   text-decoration: underline;
 }
 
-.search-form__label:has(:focus) {
+.search-form__label:focus {
   outline: none;
 }
 
@@ -118,8 +117,8 @@ ol {
 }
 
 .search-form__textfield {
-  width: 225px;
-  height: 27px;
+  min-width: 225px;
+  min-height: 27px;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   border-left: none;
@@ -137,6 +136,10 @@ ol {
 }
 
 .search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -147,11 +150,11 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  display: inline-block;
+  display: flex;
   border: 1px solid #fff;
   width: 19px;
   height: 19px;
-  vertical-align: middle;
+  align-items: center;
   background-color: transparent;
 }
 
@@ -165,7 +168,7 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
 }
 
 .button {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   color: #fff;
   font-family: inherit;
   font-style: normal;
@@ -201,16 +204,17 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
 }
 
 .content__details {
-  height: 534px;
-  width: 400px;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 26px;
 }
 
 .title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -219,14 +223,14 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
 }
 
 .content__list {
-  margin-top: 0;
   height: 300px;
-  overflow-y: scroll;
+  width: 400px;
+  overflow-y: auto;
   position: relative;
 }
 
 .content__list-item {
-  height: 103px;
+  min-height: 103px;
   margin: 2px;
 }
 
@@ -234,15 +238,15 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
   margin-bottom: 30px;
 }
 
-.content__list-item:active {
-  background-color: #545050;
-}
-
 .content__card-link {
   display: block;
   text-decoration: none;
   color: #FFF;
   margin: 2px;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__card-link:hover {
@@ -258,6 +262,10 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
   outline-offset: 1px;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 .content__video-card {
   display: flex;
   justify-content: space-between;
@@ -265,12 +273,12 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
 }
 
 .content__video-card-description-container {
-  width: 50%;
+  flex-grow: 1;
 }
 
 .content__video-card-title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -281,21 +289,22 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
 
 .content__video-card-description {
   color: #FFF;
-  font-family: Fira Sans Condensed;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16.2px;
+  line-height: 90%;
 }
 
 .content__video-card-thumbnail {
-  width: 200px;
+  width: 210px; 
   height: 103px;
+  object-fit: contain;
+  object-position: right;
 }
 
 .content__accent {
   color: #545050;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
