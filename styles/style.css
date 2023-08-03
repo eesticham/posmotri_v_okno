@@ -224,14 +224,14 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
 
 .content__list {
   height: 300px;
-  width: 400px;
+  /*added 16px due to scrollbar on windows*/
+  width: calc(400px + 16px);
   overflow-y: auto;
   position: relative;
 }
 
 .content__list-item {
   min-height: 103px;
-  margin: 2px;
 }
 
 .content__list-item:not(:last-child) {
@@ -296,10 +296,10 @@ input[type='checkbox']:checked+.search-form__pseudo-checkbox {
 }
 
 .content__video-card-thumbnail {
-  width: 210px; 
+  width: 194px;
   height: 103px;
-  object-fit: contain;
-  object-position: right;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__accent {
